@@ -10,6 +10,14 @@ CLASSIFIERS={'frozen_2023':{'01':'non_sub','14':'non_sub','11':'substitution','1
 REQUIRED=['event_id','facility','unit','onset','offset','timestamp','modc','noxr_count','mass_A','bulk_indicator']
 
 def run(input_path,outdir,classifier):
+    out=Path(outdir)
+    if out.exists() and any(out.iterdir()):
+        raise FileExistsError('Output directory must not exist: '+str(out))
+    source=Path(input_path)
+    if source.name=='event_hours_raw.csv' and (source.parent/'raw_report.json').exists():
+        meta=json.loads((source.parent/'raw_report.json').read_text())
+        if meta.get('status')!='PASS' or meta.get('unresolved_hours',0):
+            raise ValueError('Incomplete raw adapter ledger must not be analyzed')
     d=pd.read_csv(input_path,dtype={'facility':'string','unit':'string','modc':'string','event_id':'string','bulk_indicator':'string'})
     missing=set(REQUIRED)-set(d.columns)
     if missing:raise ValueError('Missing required columns: '+','.join(sorted(missing)))
@@ -45,10 +53,9 @@ def run(input_path,outdir,classifier):
         sets={p:set(ev.sort_values([p,'event_id'],ascending=[False,True]).head(k).event_id) for p in 'ABC'}
         for p in 'BC':overlaps.append({'tail_percent':int(100*frac),'policy':p,'k':k,'overlap':len(sets['A']&sets[p])})
     report={'status':'PASS','scope':'event-hour engine only; NOT independent raw ECMPS transfer','classifier':classifier,'source_sha256':hashlib.sha256(Path(input_path).read_bytes()).hexdigest(),'facilities':int(d.facility.nunique()),'units':int(d[['facility','unit']].drop_duplicates().shape[0]),'event_hours':len(d),'events':len(ev),'policy_mass_lbs':{p:round(float(ev[p].sum()),6) for p in 'ABCD'},'D_eligible_events':int(ev.eligible.sum()),'unknown_modc_hours':int(d['class'].eq('out_of_dictionary').sum())}
-    o=Path(outdir)
-    if o.exists() and any(o.iterdir()) and not (o/'event_hours_raw.csv').is_file():
-        raise FileExistsError('Refusing to overwrite existing output directory')
+    o=out
     o.mkdir(parents=True,exist_ok=True)
+    d[['event_id','facility','unit','timestamp','offset','source_location','provenance_type','source_file','modc','class','bulk_indicator','mass_A','B','C','D','eligible']].to_csv(o/'hour_decisions.csv',index=False) if {'source_location','provenance_type','source_file'}.issubset(d.columns) else d[['event_id','facility','unit','timestamp','offset','modc','class','bulk_indicator','mass_A','B','C','D','eligible']].to_csv(o/'hour_decisions.csv',index=False)
     ev.to_csv(o/'event_policy.csv',index=False);pd.DataFrame(overlaps).to_csv(o/'upper_tail.csv',index=False)
     d.groupby(['modc','class']).agg(hours=('event_id','size'),mass_lbs=('mass_A','sum')).reset_index().to_csv(o/'modc_summary.csv',index=False)
     (o/'report.json').write_text(json.dumps(report,indent=2),encoding='utf-8');return report

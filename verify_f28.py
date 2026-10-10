@@ -19,6 +19,19 @@ def verify(csv_path, tol=0.001):
     groups=d.groupby(['date','hour']); active=groups.active_units.first()
     if not ((groups.size()==2).all() and (active.isin([1,2])).all()):raise ValueError('Unexpected stack pairing')
     if not np.allclose(groups.F28_share.sum(),1,rtol=0,atol=1e-9):raise ValueError('Shares do not sum to 1')
+    if not set(d.unit.astype(str)).issubset({'11','12'}):raise ValueError('Unexpected unit identity')
+    for (_, _),group in groups:
+        active_rows=group[group.F28_share>1e-12]
+        if len(active_rows)!=int(group.active_units.iloc[0]):raise ValueError('Active-unit count differs from positive shares')
+        if len(set(group.unit.astype(str)))!=len(group):raise ValueError('Duplicate unit identity in stack hour')
+        if not group.active_units.eq(group.active_units.iloc[0]).all():raise ValueError('Inconsistent active units')
+        # Inactive unit can have an undefined HI rate; its contribution is exactly zero.
+        if not group.unit_operating_time.between(0,1).all():raise ValueError('Invalid unit operating time')
+        if not np.isfinite(group.loc[group.unit_operating_time>0,'unit_HI_rate']).all():raise ValueError('Active unit heat input missing')
+        factors=(group.unit_HI_rate.fillna(0)*group.unit_operating_time)
+        if not np.isfinite(factors).all() or (factors<0).any() or factors.sum()<=0:raise ValueError('Invalid heat-input weights')
+        shares=factors/factors.sum()
+        if not np.allclose(shares,group.F28_share,rtol=0,atol=1e-9):raise ValueError('F28 heat-input share mismatch')
     return {'status':'PASS','rows':len(d),'max_abs_difference_lb':maximum,'sum_difference_lb':float(delta.sum()),'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'scope':'Supplied F28 ledger; not independently recreated from regulatory raw source'}
 
 if __name__=='__main__':

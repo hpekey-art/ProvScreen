@@ -1,0 +1,150 @@
+{
+  "ri": {
+    "raw": {
+      "status": "PASS",
+      "year": 2024,
+      "events": 1233,
+      "event_hours": 3568,
+      "unresolved_hours": 0,
+      "ecmps_files": 40,
+      "scope": "CAMPD unit mass; ECMPS parameter-specific NOXR; shared stack requires separate allocation audit",
+      "source_links_complete": true,
+      "coverage_complete": true,
+      "coverage_scope": "observed contiguous source clock; calendar-year flag per scoped unit; roster must be separately declared to certify population",
+      "full_year_required": true,
+      "roster_declared": true,
+      "units_calendar_year_complete": 10,
+      "units_in_scope": 10,
+      "stack_map_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "raw_bulk_sha256": "dc68a0eb3ae23e1d6c1d1414ab9cc36d10fdf8c0dae66c12f37831c48ecbb57b"
+    },
+    "analysis": {
+      "status": "PASS",
+      "scope": "event-hour engine only; NOT independent raw ECMPS transfer",
+      "classifier": "epa_informed_2024",
+      "source_sha256": "aba0f3d0bbcb35413ae99e1569f33f38c4827dea1a4fc61493087ab9486d978a",
+      "facilities": 5,
+      "units": 10,
+      "event_hours": 3568,
+      "events": 1233,
+      "policy_mass_lbs": {
+        "A": 152527.348,
+        "B": 145905.497,
+        "C": 146435.058,
+        "D": 140385.959
+      },
+      "D_eligible_events": 1125,
+      "unknown_modc_hours": 0
+    },
+    "input_hashes": {
+      "expected_roster_sha256": "323f3045458c75ff5f5c26e4d3e5e98bd940e37873e06c32d87230c88b35b17b",
+      "input_bulk_sha256": "dc68a0eb3ae23e1d6c1d1414ab9cc36d10fdf8c0dae66c12f37831c48ecbb57b",
+      "input_prepared_sha256": null,
+      "outputs_sha256": {
+        "policy/event_policy.csv": "c634b5eb25aa1338d35a7f8daf3657e9ec20ab723e3556e158ebef25536f3311",
+        "policy/hour_decisions.csv": "e3a23856ceffc5676dcbcfce96e529e09b2a2479c662f8d35e1586c94319f421",
+        "policy/modc_summary.csv": "0af5aa17585d7c60c02591ee1727be7025607b5de8482beead1f2e485d70c543",
+        "policy/report.json": "eb28b0d736e78d1a26a6e146a90c185b33a14fcda9dc118a0efc3c232b5f94c4",
+        "policy/upper_tail.csv": "481d8d2242ac443fb95d3256f87e16cf1cb3f1a303300f4000bd464ebf95b0f0",
+        "raw/coverage_manifest.csv": "e0f76844b36f7cafd967c8b5df5ba155746c234438ab0f6d2c1623f32509f33e",
+        "raw/event_hours_raw.csv": "aba0f3d0bbcb35413ae99e1569f33f38c4827dea1a4fc61493087ab9486d978a",
+        "raw/raw_report.json": "6bc5e7f4507c4f6c530ab61759a7027497015e015f853a9429050b8d3674d6c3",
+        "raw/source_manifest.csv": "174ce4af92040c420b68fbee546628ff69331c4001df02d91ba7e9f7b822a8a1",
+        "raw/unresolved_hours.csv": "5b2d1472c74e7a3a6e41398aaf3929776a65e16ce08fd903d8ad9f4624aef7f2"
+      },
+      "stack_map_sha256": null
+    },
+    "output_file_sha256": {
+      "policy/event_policy.csv": "c634b5eb25aa1338d35a7f8daf3657e9ec20ab723e3556e158ebef25536f3311",
+      "policy/hour_decisions.csv": "e3a23856ceffc5676dcbcfce96e529e09b2a2479c662f8d35e1586c94319f421",
+      "policy/modc_summary.csv": "0af5aa17585d7c60c02591ee1727be7025607b5de8482beead1f2e485d70c543",
+      "policy/report.json": "eb28b0d736e78d1a26a6e146a90c185b33a14fcda9dc118a0efc3c232b5f94c4",
+      "policy/upper_tail.csv": "481d8d2242ac443fb95d3256f87e16cf1cb3f1a303300f4000bd464ebf95b0f0",
+      "raw/coverage_manifest.csv": "e0f76844b36f7cafd967c8b5df5ba155746c234438ab0f6d2c1623f32509f33e",
+      "raw/event_hours_raw.csv": "aba0f3d0bbcb35413ae99e1569f33f38c4827dea1a4fc61493087ab9486d978a",
+      "raw/raw_report.json": "6bc5e7f4507c4f6c530ab61759a7027497015e015f853a9429050b8d3674d6c3",
+      "raw/source_manifest.csv": "174ce4af92040c420b68fbee546628ff69331c4001df02d91ba7e9f7b822a8a1",
+      "raw/unresolved_hours.csv": "5b2d1472c74e7a3a6e41398aaf3929776a65e16ce08fd903d8ad9f4624aef7f2"
+    }
+  },
+  "ma": {
+    "raw": {
+      "status": "PASS",
+      "year": 2024,
+      "events": 829,
+      "event_hours": 1997,
+      "unresolved_hours": 0,
+      "ecmps_files": 12,
+      "scope": "CAMPD unit mass; ECMPS parameter-specific NOXR; shared stack requires separate allocation audit",
+      "source_links_complete": true,
+      "coverage_complete": true,
+      "coverage_scope": "observed contiguous source clock; calendar-year flag per scoped unit; roster must be separately declared to certify population",
+      "full_year_required": true,
+      "roster_declared": true,
+      "units_calendar_year_complete": 4,
+      "units_in_scope": 4,
+      "stack_map_sha256": "40a50bebfca503f565a8fc6e1e3a0792dc5c0985726a7fb02835a30d708b9524",
+      "raw_bulk_sha256": "434a6164d6f28d61827c0de875b09e2dfb8209b99c4c1cb6e4e72eb2fa6040cd"
+    },
+    "analysis": {
+      "status": "PASS",
+      "scope": "event-hour engine only; NOT independent raw ECMPS transfer",
+      "classifier": "epa_informed_2024",
+      "source_sha256": "5d1408c4e666f58799465a8bc45e7ffcb2fd974582bbab9b2530806a251a0a01",
+      "facilities": 2,
+      "units": 4,
+      "event_hours": 1997,
+      "events": 829,
+      "policy_mass_lbs": {
+        "A": 18035.757,
+        "B": 17305.222,
+        "C": 17939.975,
+        "D": 17897.087
+      },
+      "D_eligible_events": 813,
+      "unknown_modc_hours": 0
+    },
+    "input_hashes": {
+      "expected_roster_sha256": "44eab5a63017150ec133e68ac23ff1658ad0bec83eb4f0af2a76e936144365e3",
+      "input_bulk_sha256": "434a6164d6f28d61827c0de875b09e2dfb8209b99c4c1cb6e4e72eb2fa6040cd",
+      "input_prepared_sha256": null,
+      "outputs_sha256": {
+        "policy/event_policy.csv": "b57f7ecc4f3d7e690a79d35abe317c4a1234ff901c4b42b69b7f5469b23ba471",
+        "policy/hour_decisions.csv": "4fbf56ab90ff5ac4fdaa9a323a5feec642d831a446b4aae0c4229461da87528f",
+        "policy/modc_summary.csv": "70574eba5caee6982b44022803cef52c09dc68885b68246fbd0cd60af3193cde",
+        "policy/report.json": "9fbbe3eeaf8a7bd1bee1dc78db387bf711b76a8c0554e82e959daaae7041af5d",
+        "policy/upper_tail.csv": "437d9d3b34731e31080ea9dd5deabda0439c62486f3f8ce6755ef6a39cb31590",
+        "raw/coverage_manifest.csv": "fc5abf13538514a0966b3b8b2f538e65f8c638b17d311485ae0e4dda48f1d790",
+        "raw/event_hours_raw.csv": "5d1408c4e666f58799465a8bc45e7ffcb2fd974582bbab9b2530806a251a0a01",
+        "raw/raw_report.json": "31eaa6958ce216899e79d6e7adc61bfcd3a7cdb74554da1bf5ba7465fe7da488",
+        "raw/source_manifest.csv": "c0cacb1bd5f3c6519c2f3a169ae7c7967187aa545ca4ed2ea450ef10909bc428",
+        "raw/stack_map_used.json": "ea288df4fc8030e91650d291e6ec9b9ea79bd8d92b2093cf7f35c7e52ecad1e3",
+        "raw/unresolved_hours.csv": "5b2d1472c74e7a3a6e41398aaf3929776a65e16ce08fd903d8ad9f4624aef7f2"
+      },
+      "stack_map_sha256": "ea288df4fc8030e91650d291e6ec9b9ea79bd8d92b2093cf7f35c7e52ecad1e3"
+    },
+    "output_file_sha256": {
+      "policy/event_policy.csv": "b57f7ecc4f3d7e690a79d35abe317c4a1234ff901c4b42b69b7f5469b23ba471",
+      "policy/hour_decisions.csv": "4fbf56ab90ff5ac4fdaa9a323a5feec642d831a446b4aae0c4229461da87528f",
+      "policy/modc_summary.csv": "70574eba5caee6982b44022803cef52c09dc68885b68246fbd0cd60af3193cde",
+      "policy/report.json": "9fbbe3eeaf8a7bd1bee1dc78db387bf711b76a8c0554e82e959daaae7041af5d",
+      "policy/upper_tail.csv": "437d9d3b34731e31080ea9dd5deabda0439c62486f3f8ce6755ef6a39cb31590",
+      "raw/coverage_manifest.csv": "fc5abf13538514a0966b3b8b2f538e65f8c638b17d311485ae0e4dda48f1d790",
+      "raw/event_hours_raw.csv": "5d1408c4e666f58799465a8bc45e7ffcb2fd974582bbab9b2530806a251a0a01",
+      "raw/raw_report.json": "31eaa6958ce216899e79d6e7adc61bfcd3a7cdb74554da1bf5ba7465fe7da488",
+      "raw/source_manifest.csv": "c0cacb1bd5f3c6519c2f3a169ae7c7967187aa545ca4ed2ea450ef10909bc428",
+      "raw/stack_map_used.json": "ea288df4fc8030e91650d291e6ec9b9ea79bd8d92b2093cf7f35c7e52ecad1e3",
+      "raw/unresolved_hours.csv": "5b2d1472c74e7a3a6e41398aaf3929776a65e16ce08fd903d8ad9f4624aef7f2"
+    }
+  },
+  "f28": {
+    "status": "PASS",
+    "rows": 7120,
+    "max_abs_difference_lb": 0.0004992791926961004,
+    "sum_difference_lb": 5.982020434558422e-14,
+    "sha256": "c9b97386dd16d25094958228a15ae8005ee0f3cdec0fb1b831d38b486bd35543",
+    "scope": "Supplied F28 ledger; not independently recreated from regulatory raw source"
+  },
+  "version": "0.2.2 local candidate (not yet Zenodo published)",
+  "external_archive": "v0.2.1, doi:10.5281/zenodo.23286039 (does NOT include v0.2.2 changes)"
+}

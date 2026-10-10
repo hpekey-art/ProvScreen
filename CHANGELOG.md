@@ -7,3 +7,10 @@
 - No changes to frozen 2023 scientific definitions or results.
 
 This is a GitHub upload candidate, not a verified public release/DOI.
+
+## 0.2.2 (local candidate, not a public release)
+- Repair S01: reject within-roster CAMPD timestamp gaps instead of silently shortening startup windows.
+- Repair S02: validate integer hour and finite source Operating Time for direct/shared-stack ECMPS records.
+- Add source-kind check on mapped stack targets.
+- 27 automated tests; independently rerun RI2024 and four-unit MA2024 local raw regression.
+- Add bounded naive flat-table contract demonstration; no change to 2023 frozen science.

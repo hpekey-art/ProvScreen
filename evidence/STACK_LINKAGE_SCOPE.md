@@ -1,5 +1,5 @@
-# Blackstone mapping boundary
+# Blackstone CS2 inherited provenance — claim boundary
 
-The explicit map associates ORIS 1594 units 11 and 12 with monitoring location CS2. The 2024 monitoring-plan and mass allocation are **not** validated by the raw adapter. `verify_f28.py` checks the 7,120 supplied numerical ledger rows against their recorded rates, time fractions, shares and CAMPD mass within 0.001 lb per unit-hour. This is an internal consistency audit of a separately supplied ledger, not an independent regulatory adjudication or independent measurement. The Massachusetts demonstration remains four units only.
+The supplied 2024 Monitoring Plan and reconciliation evidence link Blackstone units 11/12 to the common CS2 stack. A stack measurement is not an independently measured unit NOXR value. The two-unit mass reconciliation is checked using source NOX rate × CS2 Operating Time × heat-input/time-based F-28 allocation weights.
 
-The release cannot infer stack topology, distinguish arbitrary multiple NOXR paths, reconstruct the original 2023 XML pipeline, or perform full EPA source acquisition.
+The `verify_f28.py` checker now verifies pair identity (11,12), declared active-unit counts, F-28 weight reconstruction from unit heat-input rate and unit Operating Time, algebraic predictions and mass residuals (0.001 lb/unit-hour tolerance). Missing heat-input rate on an inactive unit is not treated as active missing data. 7,120 precompiled unit-hour rows are verified. This does not independently re-extract Monitoring Plan topology, establish legal applicability or prove physical-emissions accuracy. The explicit stack_map is an author-supplied configuration, not an automated regulatory approval.

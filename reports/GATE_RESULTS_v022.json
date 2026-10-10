@@ -1,0 +1,38 @@
+{
+  "version": "0.2.2-local-candidate",
+  "archived_public_version": "0.2.1",
+  "scientific_rules_changed": false,
+  "tests": 27,
+  "RI2024": {
+    "events": 1233,
+    "event_hours": 3568,
+    "policy_mass_lbs": {
+      "A": 152527.348,
+      "B": 145905.497,
+      "C": 146435.058,
+      "D": 140385.959
+    }
+  },
+  "MA2024_four_units": {
+    "events": 829,
+    "event_hours": 1997,
+    "policy_mass_lbs": {
+      "A": 18035.757,
+      "B": 17305.222,
+      "C": 17939.975,
+      "D": 17897.087
+    }
+  },
+  "input_contract_repairs": [
+    "reject interior CAMPD clock gap",
+    "reject fractional/non-finite ECMPS clock",
+    "finite source Operating Time in [0,1] including shared stacks",
+    "reject stack mapping to unit source"
+  ],
+  "limitations": [
+    "No fresh independent human user test",
+    "No claimed complete-year certification beyond observed endpoints",
+    "Engine API itself still has separate publication-safety caveats",
+    "No DOI assigned to v0.2.2"
+  ]
+}

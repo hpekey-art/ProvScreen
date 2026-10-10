@@ -17,7 +17,7 @@ class RawAdapterTests(unittest.TestCase):
     def test_raw_end_to_end(self):
         r=build(self.root/'bulk.csv',self.root/'Emissions - fixture.json',self.root/'out',year=2024)
         self.assertEqual((r['events'],r['event_hours']),(2,3))
-        v=run(self.root/'out/event_hours_raw.csv',self.root/'out','epa_informed_2024')
+        v=run(self.root/'out/event_hours_raw.csv',self.root/'policy','epa_informed_2024')
         self.assertEqual(v['policy_mass_lbs']['A'],9.5)
         self.assertEqual(v['policy_mass_lbs']['C'],6.5)
         self.assertEqual(v['D_eligible_events'],1)

@@ -1,0 +1,29 @@
+{
+  "scope": "Synthetic contract illustration: comparison with intentionally naive flat join; not a benchmark against validated production systems",
+  "cases": [
+    {
+      "case": "valid_three_hour",
+      "flat_status": "accepted",
+      "flat_A_mass_lb": 9,
+      "provscreen_status": "accepted",
+      "provscreen_A_mass_lb": 9.0,
+      "provscreen_reason": null
+    },
+    {
+      "case": "missing_middle_bulk_hour",
+      "flat_status": "accepted",
+      "flat_A_mass_lb": 2,
+      "provscreen_status": "rejected",
+      "provscreen_A_mass_lb": null,
+      "provscreen_reason": "CAMPD hourly coverage gap for 999|A; refuse truncated event"
+    },
+    {
+      "case": "fractional_ecmps_clock",
+      "flat_status": "accepted",
+      "flat_A_mass_lb": 9,
+      "provscreen_status": "rejected",
+      "provscreen_A_mass_lb": null,
+      "provscreen_reason": "Invalid ECMPS hour: 1.9"
+    }
+  ]
+}
