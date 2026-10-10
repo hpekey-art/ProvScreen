@@ -1,0 +1,22 @@
+test_2023_frozen_reference (test_engine.Regression.test_2023_frozen_reference) ... ok
+test_duplicate_hour_rejected (test_engine.Regression.test_duplicate_hour_rejected) ... ok
+test_invalid_offset_rejected (test_engine.Regression.test_invalid_offset_rejected) ... ok
+test_ma2024_epa (test_engine.Regression.test_ma2024_epa) ... ok
+test_ma2024_frozen (test_engine.Regression.test_ma2024_frozen) ... ok
+test_mass_negative_rejected (test_engine.Regression.test_mass_negative_rejected) ... ok
+test_ri2024_epa (test_engine.Regression.test_ri2024_epa) ... ok
+test_ri2024_frozen (test_engine.Regression.test_ri2024_frozen) ... ok
+test_duplicate_source_fails (test_raw.RawAdapterTests.test_duplicate_source_fails) ... ok
+test_missing_noxr_fails_closed (test_raw.RawAdapterTests.test_missing_noxr_fails_closed) ... ok
+test_raw_end_to_end (test_raw.RawAdapterTests.test_raw_end_to_end) ... ok
+test_atomic_cli_good_prepared (test_release_guard.PublicationSafety.test_atomic_cli_good_prepared) ... ok
+test_atomic_cli_no_stale_output (test_release_guard.PublicationSafety.test_atomic_cli_no_stale_output) ... ok
+test_legal_calculated_indicator (test_release_guard.PublicationSafety.test_legal_calculated_indicator) ... ok
+test_noncontiguous_event_rejected (test_release_guard.PublicationSafety.test_noncontiguous_event_rejected) ... ok
+test_overwrite_prevented (test_release_guard.PublicationSafety.test_overwrite_prevented) ... ok
+test_unknown_indicator_rejected (test_release_guard.PublicationSafety.test_unknown_indicator_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 4.504s
+
+OK

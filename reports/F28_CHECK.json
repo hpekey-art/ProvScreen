@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "rows": 7120,
+  "max_abs_difference_lb": 0.0004992791926961004,
+  "sum_difference_lb": 5.982020434558422e-14,
+  "sha256": "c9b97386dd16d25094958228a15ae8005ee0f3cdec0fb1b831d38b486bd35543",
+  "scope": "Supplied F28 ledger; not independently recreated from regulatory raw source"
+}

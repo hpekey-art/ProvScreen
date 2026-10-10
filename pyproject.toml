@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "provscreen-noxtools"
+version = "0.2.1"
+license = {file = "LICENSE"}
+authors = [{name = "Hakan Pekey"}]
+description = "Provenance-aware screening of EPA startup NOx events with local CSV/JSON adapters"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "pandas>=1.5"]
+[project.scripts]
+provscreen = "provscreen.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+include-package-data = true

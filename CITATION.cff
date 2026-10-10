@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use ProvScreen, please cite the versioned software release."
+type: software
+title: "ProvScreen: provenance-aware startup NOx event screening"
+authors:
+  - family-names: Pekey
+    given-names: Hakan
+version: 0.2.1
+repository-code: "https://github.com/hpekey-art/ProvScreen"
+license: MIT

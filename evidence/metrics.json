@@ -1,0 +1,30 @@
+{
+  "all": {
+    "rows": 7120,
+    "max_abs_difference_lb": 0.0004992791926961004,
+    "mean_abs_difference_lb": 2.5513009237739355e-05,
+    "sum_difference_lb": 4.759300592516169e-14,
+    "total_predicted_mass_lb": 15639.06,
+    "total_CAMPD_mass_lb": 15639.060000000001
+  },
+  "both": {
+    "rows": 714,
+    "max_abs_difference_lb": 0.0004992791926961004,
+    "mean_abs_difference_lb": 0.0002544154422586724,
+    "sum_difference_lb": 4.931645369854465e-14,
+    "total_predicted_mass_lb": 3363.8469999999998,
+    "total_CAMPD_mass_lb": 3363.8469999999998
+  },
+  "single": {
+    "rows": 6406,
+    "max_abs_difference_lb": 8.881784197001252e-16,
+    "mean_abs_difference_lb": 1.8951705036877436e-18,
+    "sum_difference_lb": -1.7234477733829578e-15,
+    "total_predicted_mass_lb": 12275.213,
+    "total_CAMPD_mass_lb": 12275.213
+  },
+  "source_files": {
+    "emissions_zip_sha256": "7d7a20fe40822ed0ebf5a171fc052dc175173e74170230ff2185fb4bc232a311",
+    "massachusetts_csv_zip_sha256": "126df1b9462cf7cb13086306f2448a9e1cc34e3d0bdd44c16cb15379ceb72f1c"
+  }
+}

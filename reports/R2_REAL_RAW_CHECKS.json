@@ -1,0 +1,24 @@
+{
+  "ri": {
+    "events": 1233,
+    "event_hours": 3568,
+    "policy": {
+      "A": 152527.348,
+      "B": 145905.497,
+      "C": 146435.058,
+      "D": 140385.959
+    },
+    "matches_frozen_reference": true
+  },
+  "ma": {
+    "events": 829,
+    "event_hours": 1997,
+    "policy": {
+      "A": 18035.757,
+      "B": 17305.222,
+      "C": 17939.975,
+      "D": 17897.087
+    },
+    "matches_frozen_reference": true
+  }
+}
