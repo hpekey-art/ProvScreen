@@ -1,6 +1,9 @@
-# ProvScreen v0.2.2 — Critical Repair and Methodological Differentiation Gate
+# Historical v0.2.2 pre-release gate (archival record)
 
-**Status:** Local candidate; **NOT published** to GitHub Release or Zenodo. Public v0.2.1 remains immutable.
+The original gate below predates public v0.2.2 publication. Its candidate-status and pending-DOI statements are historical, not the current repository status. v0.2.2 version DOI: https://doi.org/10.5281/zenodo.23287169 .
+
+
+**Historical gate status at the time:** local candidate. Public v0.2.2 was subsequently published with DOI https://doi.org/10.5281/zenodo.23287169 ; v0.2.1 also remains immutable.
 
 ## S01 — missing CAMPD clock hour
 `raw.build` refuses an internal gap in the supplied clock-hour series for each selected facility/unit. It does not infer an operating stop from absence of a row. Explicit 0 remains an observed stop. Missing hours before the first or after the last supplied timestamp are a separate boundary/roster-completeness limitation.
