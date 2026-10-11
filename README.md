@@ -1,4 +1,4 @@
-# ProvScreen (v0.2.3 — local release candidate)
+# ProvScreen (v0.2.4 — documentation synchronization)
 
 ProvScreen is an MIT-licensed Python command-line tool for **provenance-aware screening of EPA Part 75 startup NOx events**. It compares four frozen data-handling policies using either a validated event-hour CSV or **locally supplied** CAMPD hourly CSV plus ECMPS Emissions Export JSON files. It does not download EPA data or perform a lossless reconstruction of all ECMPS provenance fields.
 
@@ -38,14 +38,14 @@ The raw adapter does not acquire EPA files, parse original 2023 XML, infer stack
 
 ## Verification and source identity
 
-- `tests/`: 39 automated software checks in the candidate test suite.
+- `tests/`: 39 automated software checks in the declared test suite.
 - `reference/2023_event_master.csv`: derived frozen reference, not raw 2023 source.
 - `data/`: prepared 2024 event-hour demonstration inputs; Massachusetts covers four units only.
-- `reports/`: saved candidate test and real-raw regression records. These are historical run evidence; they are not new raw-source reconstructions on the GitHub host.
+- `reports/`: saved historical and release-gate test and raw-run evidence. These are historical run evidence; they are not new raw-source reconstructions on the GitHub host.
 - `reports/RAW_SOURCE_SHA256.csv`: hashes of **unbundled** raw inputs needed to repeat the historical raw-source demonstrations.
-- `MANIFEST_SHA256.csv`: checksums of this repository content at assembly time.
+- `MANIFEST_SHA256.csv`: the complete non-self-referential inventory of this v0.2.4 source package. `SHA256_CANDIDATE_MANIFEST.json` is a separate, exact non-self-referential inventory of the public v0.2.3 tracked-tree baseline at Git commit `c1afa595e2d6e24487889094272d3641e8e905dc`; it is used only for release-difference verification.
 
-See [RELEASE_STATUS.md](RELEASE_STATUS.md) for unresolved boundaries. For code citation use [CITATION.cff](CITATION.cff). **v0.2.3 is a local unpublished release candidate.** The public v0.2.2 DOI (10.5281/zenodo.23287169) must not be cited as though it includes the v0.2.3 typed-identity repairs. No v0.2.3 DOI is asserted in this candidate.
+See [RELEASE_STATUS.md](RELEASE_STATUS.md) for verified evidence levels and unresolved validation boundaries. For code citation use [CITATION.cff](CITATION.cff). **v0.2.3 was publicly released on 11 October 2026:** https://github.com/hpekey-art/ProvScreen/releases/tag/v0.2.3 , Zenodo version DOI https://doi.org/10.5281/zenodo.23292299 . v0.2.4 changes documentation/release identifiers only. Cite a version-specific v0.2.4 DOI only after the new GitHub tag and Zenodo record have actually been published and independently verified; no DOI is asserted here.
 
 ## License
 

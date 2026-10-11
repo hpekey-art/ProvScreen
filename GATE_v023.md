@@ -1,4 +1,7 @@
-# v0.2.3 typed provenance repair gate
+# Historical v0.2.3 gate — evidence recorded before public release
+
+This file preserves the v0.2.3 gate facts and is *not* a current publication-state declaration. GitHub v0.2.3 and Zenodo DOI https://doi.org/10.5281/zenodo.23292299 are published. Statements below about absence of tag/DOI refer only to the pre-release audit date.
+
 
 - Both source identity fields populated: reject (no precedence rule).
 - Raw source dictionary uses (facility, source-kind, source-id, clock) keys.
@@ -12,5 +15,5 @@
 - Four-unit MA 2024 raw-adapter rerun passed from the installed wheel. Blackstone shared-stack provenance remains inherited through an explicit CS2 link and must not be described as independent unit-level measurement.
 - Fresh RI 2024 raw-source rerun was not possible because its unbundled raw inputs were absent. Original RI 2023 raw XML reconstruction, third-party execution, Windows v0.2.3 installation, and broader regulatory portability remain unverified.
 - The source candidate originally contained a large MA raw-source working directory despite documentation stating that raw inputs were not redistributed. The corrected lightweight candidate excludes it; hashes and bounded source identities remain documented.
-- No EMS manuscript Word file, public v0.2.3 tag, or provider-confirmed v0.2.3 DOI was supplied to this gate. Manuscript synchronization and rendered-page QA therefore remain on HOLD.
+- At the time of the pre-publication audit no EMS manuscript, public v0.2.3 tag, or provider-confirmed DOI was available. The public v0.2.3 release and version DOI were subsequently verified; this historical constraint is not the current status.
 - All policy rules, 2023 science and reference numerical data unchanged.

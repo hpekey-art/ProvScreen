@@ -1,17 +1,11 @@
-# ProvScreen v0.2.3 — LOCAL DEVELOPMENT CANDIDATE ONLY
+# ProvScreen v0.2.4 — documentation synchronization and verified boundaries
 
-This is NOT a published release. DO NOT replace the DOI for publicly archived v0.2.2 (10.5281/zenodo.23287169).
-Typed unit-vs-stack identity and the pandas timestamp-fixture repair have been tested locally.
+**Public history (immutable):** v0.2.2 (https://doi.org/10.5281/zenodo.23287169) and v0.2.3 (https://doi.org/10.5281/zenodo.23292299) remain unmodified. The v0.2.3 GitHub release is https://github.com/hpekey-art/ProvScreen/releases/tag/v0.2.3 .
 
-Release-gate verification on 2026-10-11:
+**v0.2.4 scope:** only documentation, manifests, version metadata, and citation-file version change. This source package does not claim that v0.2.4 has been publicly published or assigned a Zenodo DOI. Its publication is a separate operation.
 
-- A v0.2.3 wheel built successfully from the corrected candidate.
-- The wheel and all declared dependencies installed into a new environment that did not expose system site-packages (Python 3.12.14, pandas 3.0.6, NumPy 2.5.4).
-- Package metadata, `provscreen.__version__`, installed module origin, dependency checks, and CLI entry point agreed with v0.2.3.
-- All 39 tests passed against the installed wheel, including negative typed-lineage cases.
-- Prepared-input RI 2024 and four-unit MA 2024 CLI runs exactly reproduced the declared counts and Policy A–D masses.
-- A local MA 2024 four-unit raw-adapter rerun from the installed wheel reproduced 829 events, 1,997 event-hours, and all four declared masses. Its source files are verification inputs and are not redistributed in the lightweight release candidate.
+**Verified v0.2.3 baseline (independent EMS audit, 11 Oct 2026):** the public installed wheel passed 39/39 tests in isolated Python 3.12.14, pandas 3.0.6, NumPy 2.5.4, the CLI and dependency check passed, and the RI 2024 and four-unit MA 2024 prepared-input regressions exactly reproduced the declared Policy A–D totals. The project's separate six-case typed-identity reference implementation agreed 6/6, but is not third-party validation. The prior gate records a new four-unit MA raw-adapter rerun; the underlying raw bytes were not redistributed for independent replay. No fresh RI raw-source rerun occurred at that gate. F-28 consistency is ledger arithmetic, not independent measurement.
 
-Still NOT VERIFIED: a fresh RI 2024 raw-source rerun (required raw inputs were not supplied to this gate); original RI 2023 raw EPA XML reconstruction; independent external-user execution of v0.2.3; Windows installation of v0.2.3; comprehensive support for other EPA schemas or regulatory systems; physical-emissions accuracy; and independent unit-level measurement at Blackstone.
+**v0.2.4 clean-room release gate (11 Oct 2026):** a fresh wheel was built from the corrected source candidate and installed with resolved dependencies into an isolated Python 3.12.14 environment. Installed-package origin, `pip check`, CLI help, all 39 automated tests, the six bounded typed-identity cases, and the RI 2024 and four-unit MA 2024 prepared-input regressions passed. A separate Decimal-based audit reproduced the frozen derived RI 2023 counts and Policy A–D totals. Both non-self-referential manifests passed inventory and hash validation. These checks authorize publication of this documentation-only candidate; they do not claim that publication has occurred, assign a v0.2.4 DOI, or constitute a fresh raw-EPA acquisition/adapter rerun. The 2023 analysis remains a frozen derived reference, not a fresh reconstruction of historical EPA XML.
 
-The frozen RI 2023 science and derived reference results remain unchanged. Public release remains on HOLD until an immutable GitHub v0.2.3 tag and a provider-confirmed, version-specific Zenodo DOI exist. Manuscript synchronization must follow, not precede, that evidence.
+**Not demonstrated:** new RI 2024 raw-data rerun, original RI 2023 XML reconstruction, physical-emissions truth, regulator approval of shared stack mapping, third-party end-user usability, non-EPA regulatory portability, complete ECMPS schema coverage or full Python>=3.9 compatibility matrix.

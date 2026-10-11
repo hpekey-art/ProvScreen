@@ -1,11 +1,12 @@
 {
-  "scope": "All source files except this JSON manifest; CSV manifest excludes both manifest files to avoid circularity",
+  "scope": "Exact public GitHub v0.2.3 tracked-tree baseline at commit c1afa595e2d6e24487889094272d3641e8e905dc; non-self-referential inventory excluding SHA256_CANDIDATE_MANIFEST.json.",
+  "repository": "https://github.com/hpekey-art/ProvScreen",
+  "tag": "v0.2.3",
+  "commit": "c1afa595e2d6e24487889094272d3641e8e905dc",
+  "excludes": [
+    "SHA256_CANDIDATE_MANIFEST.json"
+  ],
   "files": [
-    {
-      "file": ".gitignore",
-      "sha256": "3a0118b045eeb492c37ecc89f3da601a44f33784836630c9a42028676ed9e0af",
-      "bytes": 332
-    },
     {
       "file": "CHANGELOG.md",
       "sha256": "e88a8a8b86933aab4ce7807a1bc4c6c618d053fc3f9a9a29b5df93f968b34d46",
@@ -45,6 +46,11 @@
       "file": "LICENSE",
       "sha256": "a86c901b18a0b0aacd390c8bb0b8193867cbd2c022436b40311168ec41d837ab",
       "bytes": 1068
+    },
+    {
+      "file": "MANIFEST_SHA256.csv",
+      "sha256": "047c940f24c6ef68aa652a81c8311c76f9812a479d7b8151bb9b4941b80d20e7",
+      "bytes": 7888
     },
     {
       "file": "README.md",
@@ -127,6 +133,11 @@
       "bytes": 306
     },
     {
+      "file": "reports/BUILD_LOG.txt",
+      "sha256": "79779ae8954ef13ba11903d437c0a9d39031c8dfd9bb43f10768b210dc45b02f",
+      "bytes": 986
+    },
+    {
       "file": "reports/F28_CHECK.json",
       "sha256": "53362ba892559ead3a423df01cea97854a07e5bd4573e249ccc039e5fa4a18c8",
       "bytes": 304
@@ -177,9 +188,29 @@
       "bytes": 31
     },
     {
+      "file": "reports/R1_testlog.txt",
+      "sha256": "02c6449067349f13c610d4d5552452347a1011c9a0fedd571e267191fa3cec53",
+      "bytes": 1627
+    },
+    {
+      "file": "reports/R2_MIT_TESTS.txt",
+      "sha256": "6c4198e9c0bf12903065ff59bcca87c2ce480d0e3d77ccbd15b70a47ecab9f00",
+      "bytes": 1627
+    },
+    {
       "file": "reports/R2_REAL_RAW_CHECKS.json",
       "sha256": "7a2f8c654a74066bf7f73eb826e5fefab7c12e3af9b017c35e9166590be326f7",
       "bytes": 419
+    },
+    {
+      "file": "reports/R2_ma_raw_run.txt",
+      "sha256": "2cd6efd0e2d94360df0af0c99cc7563a1084aa2a0950f7feeb7c809cfd219f4d",
+      "bytes": 455
+    },
+    {
+      "file": "reports/R2_ri_raw_run.txt",
+      "sha256": "e8da73734ac561898bb28c38af909e8890ea0e405b109b89ddc59b8d6b1af6a6",
+      "bytes": 462
     },
     {
       "file": "reports/RAW_SOURCE_SHA256.csv",
@@ -370,11 +401,6 @@
       "file": "verify_f28.py",
       "sha256": "07f8e4959168585b3fb8904278af44ec7f765b447c1b1ce8bce160fd45fb70b7",
       "bytes": 3139
-    },
-    {
-      "file": "MANIFEST_SHA256.csv",
-      "sha256": "047c940f24c6ef68aa652a81c8311c76f9812a479d7b8151bb9b4941b80d20e7",
-      "bytes": 7888
     }
   ]
 }
