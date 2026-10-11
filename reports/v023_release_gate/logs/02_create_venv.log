@@ -1,0 +1,3 @@
+$ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m venv /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv
+
+[exit_code] 0

@@ -1,0 +1,11 @@
+$ /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/bin/python -c import importlib.metadata,provscreen,sys,pandas,numpy,json;print(json.dumps({'python':sys.version.split()[0],'pandas':pandas.__version__,'numpy':numpy.__version__,'metadata_version':importlib.metadata.version('provscreen-noxtools'),'module_version':provscreen.__version__,'module_path':provscreen.__file__},indent=2))
+{
+  "python": "3.12.14",
+  "pandas": "3.0.6",
+  "numpy": "2.5.4",
+  "metadata_version": "0.2.3",
+  "module_version": "0.2.3",
+  "module_path": "/workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/lib/python3.12/site-packages/provscreen/__init__.py"
+}
+
+[exit_code] 0

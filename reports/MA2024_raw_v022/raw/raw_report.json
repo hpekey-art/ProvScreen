@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "year": 2024,
+  "events": 829,
+  "event_hours": 1997,
+  "unresolved_hours": 0,
+  "ecmps_files": 12,
+  "scope": "CAMPD unit mass; ECMPS parameter-specific NOXR; shared stack requires separate allocation audit",
+  "coverage_complete": true,
+  "raw_bulk_sha256": "434a6164d6f28d61827c0de875b09e2dfb8209b99c4c1cb6e4e72eb2fa6040cd"
+}

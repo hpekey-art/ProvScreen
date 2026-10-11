@@ -1,13 +1,9 @@
-GITHUB YUKLEME TALIMATI
+GITHUB v0.2.3 ADAY YUKLEME NOTU
 
-Depo: https://github.com/hpekey-art/ProvScreen (su an PRIVATE)
-1) ZIP dosyasini bilgisayariniza indirin ve Tumunu Ayikla ile acin.
-2) ProvScreen_GitHub_Upload_v0.2.1 klasorunun ICINE girin.
-3) GitHub deposunda Quick setup > uploading an existing file baglantisini acin.
-4) Klasorun ICINDEKI DOSYALARI ve klasorleri secip yukleyin. ZIP dosyasini yuklemeyin.
-5) GitHub yukleme ekraninda ozellikle src/, tests/, data/, evidence/, reference/, reports/, LICENSE, README.md, pyproject.toml ve CITATION.cff gorunmeli.
-6) Commit message: Initial ProvScreen v0.2.1 MIT candidate
-7) Commit changes dugmesine basin. PRIVATE olarak kalsin; Release/Zenodo'ya henuz gecmeyin.
+Depo: https://github.com/hpekey-art/ProvScreen
 
-Not: Bu paket ham EPA verilerini, API anahtarlarini, Python cache ve build klasorlerini icermiyor.
-NOT: GitHub tarayicisi bazi durumlarda surukle-birak ile klasor yapisini korur; gorunmuyorsa onaylamayin, ekran goruntusu gonderin.
+Bu klasor v0.2.3 icin duzeltilmis yerel adaydir; mevcut public v0.2.2 tag'i degistirilmemelidir. Once aday degisikliklerini yeni bir commit/branch uzerinde inceleyin. Kaynak agacinda src/, tests/, data/, evidence/, reference/, reports/, LICENSE, README.md, pyproject.toml, CITATION.cff, CHANGELOG.md ve manifest dosyalari gorunmelidir.
+
+Paket ham EPA kaynak dosyalarini, API anahtarlarini, Python cache dosyalarini veya build klasorlerini icermez. `reports/RAW_SOURCE_SHA256.csv` tekrarlama icin disaridan edinilmesi gereken ham girdilerin kimliklerini kaydeder.
+
+v0.2.3 tag'i ve GitHub Release yalnizca son dosya agaci ve wheel hashleri kontrol edildikten sonra olusturulmalidir. Zenodo arsivlemesi tamamlanip surume ozel DOI saglayici ekranindan dogrulanmadan makaledeki v0.2.2 DOI'si degistirilmemelidir. DOI veya public release bu yerel aday tarafindan iddia edilmez.

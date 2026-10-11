@@ -1,0 +1,18 @@
+$ /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/bin/python -m pip install --disable-pip-version-check /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/artifacts/provscreen_noxtools-0.2.3-py3-none-any.whl
+Processing ./audit_run_20261011/artifacts/provscreen_noxtools-0.2.3-py3-none-any.whl
+Collecting numpy>=1.23 (from provscreen-noxtools==0.2.3)
+  Using cached numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas>=1.5 (from provscreen-noxtools==0.2.3)
+  Using cached pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting python-dateutil>=2.8.2 (from pandas>=1.5->provscreen-noxtools==0.2.3)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas>=1.5->provscreen-noxtools==0.2.3)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+Using cached pandas-3.0.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: six, numpy, python-dateutil, pandas, provscreen-noxtools
+Successfully installed numpy-2.5.4 pandas-3.0.6 provscreen-noxtools-0.2.3 python-dateutil-2.9.0.post0 six-1.17.0
+
+[exit_code] 0

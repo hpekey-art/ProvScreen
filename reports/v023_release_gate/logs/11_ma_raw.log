@@ -1,0 +1,21 @@
+$ /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/bin/provscreen --raw-bulk /workspace/scratch/4741ca8e08d0/v023_gate/quarantine/ma_raw_sources_unredistributed/MA_2024_four_units_CAMPD.csv --ecmps /workspace/scratch/4741ca8e08d0/v023_gate/quarantine/ma_raw_sources_unredistributed/ecmps --stack-map /workspace/scratch/4741ca8e08d0/v023_gate/final_source/evidence/stack_map.json --expected-roster /workspace/scratch/4741ca8e08d0/v023_gate/final_source/evidence/ma_2024_expected_roster.json --require-full-year --year 2024 --classifier epa_informed_2024 --outdir /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/runs/ma_raw
+{
+  "status": "PASS",
+  "scope": "event-hour engine only; NOT independent raw ECMPS transfer",
+  "classifier": "epa_informed_2024",
+  "source_sha256": "f570e10d3e19644d1db13e0a427ec85eb1dc54affafe9357905be1cbb4788137",
+  "facilities": 2,
+  "units": 4,
+  "event_hours": 1997,
+  "events": 829,
+  "policy_mass_lbs": {
+    "A": 18035.757,
+    "B": 17305.222,
+    "C": 17939.975,
+    "D": 17897.087
+  },
+  "D_eligible_events": 813,
+  "unknown_modc_hours": 0
+}
+
+[exit_code] 0

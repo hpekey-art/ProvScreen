@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "files_before_manifest_regeneration": 76,
+  "bytes_before_manifest_regeneration": 2962961,
+  "forbidden_path_or_suffix_findings": [],
+  "credential_pattern_findings": [],
+  "original_raw_epa_source_tree_present": false,
+  "submission_docx_or_pdf_present": false,
+  "scope": "Pattern/name/tree scan; not a legal opinion on upstream data licensing"
+}

@@ -5,6 +5,6 @@ title: "ProvScreen: provenance-aware startup NOx event screening"
 authors:
   - family-names: Pekey
     given-names: Hakan
-version: 0.2.2
+version: 0.2.3
 repository-code: "https://github.com/hpekey-art/ProvScreen"
 license: MIT
