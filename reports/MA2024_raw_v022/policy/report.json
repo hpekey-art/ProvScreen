@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "event-hour engine only; NOT independent raw ECMPS transfer",
+  "classifier": "epa_informed_2024",
+  "source_sha256": "5d1408c4e666f58799465a8bc45e7ffcb2fd974582bbab9b2530806a251a0a01",
+  "facilities": 2,
+  "units": 4,
+  "event_hours": 1997,
+  "events": 829,
+  "policy_mass_lbs": {
+    "A": 18035.757,
+    "B": 17305.222,
+    "C": 17939.975,
+    "D": 17897.087
+  },
+  "D_eligible_events": 813,
+  "unknown_modc_hours": 0
+}

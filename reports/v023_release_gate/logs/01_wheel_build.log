@@ -1,0 +1,12 @@
+$ /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m pip wheel . --no-deps --no-build-isolation --wheel-dir /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/artifacts
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: provscreen-noxtools
+  Building wheel for provscreen-noxtools (pyproject.toml): started
+  Building wheel for provscreen-noxtools (pyproject.toml): finished with status 'done'
+  Created wheel for provscreen-noxtools: filename=provscreen_noxtools-0.2.3-py3-none-any.whl size=11398 sha256=a12dd9fe774600dbb05136ba82a2b276808f60cf37af32581da56922e336e181
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_obrr5uj/wheels/be/aa/ba/b5b816b768d3140beb336894d319bee1875fc6b949ed29da1f
+Successfully built provscreen-noxtools
+
+[exit_code] 0

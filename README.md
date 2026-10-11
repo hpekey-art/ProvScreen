@@ -1,4 +1,4 @@
-# ProvScreen (v0.2.2 — local repair candidate)
+# ProvScreen (v0.2.3 — local release candidate)
 
 ProvScreen is an MIT-licensed Python command-line tool for **provenance-aware screening of EPA Part 75 startup NOx events**. It compares four frozen data-handling policies using either a validated event-hour CSV or **locally supplied** CAMPD hourly CSV plus ECMPS Emissions Export JSON files. It does not download EPA data or perform a lossless reconstruction of all ECMPS provenance fields.
 
@@ -38,18 +38,22 @@ The raw adapter does not acquire EPA files, parse original 2023 XML, infer stack
 
 ## Verification and source identity
 
-- `tests/`: 34 automated software checks in the candidate test suite.
+- `tests/`: 39 automated software checks in the candidate test suite.
 - `reference/2023_event_master.csv`: derived frozen reference, not raw 2023 source.
 - `data/`: prepared 2024 event-hour demonstration inputs; Massachusetts covers four units only.
 - `reports/`: saved candidate test and real-raw regression records. These are historical run evidence; they are not new raw-source reconstructions on the GitHub host.
 - `reports/RAW_SOURCE_SHA256.csv`: hashes of **unbundled** raw inputs needed to repeat the historical raw-source demonstrations.
 - `MANIFEST_SHA256.csv`: checksums of this repository content at assembly time.
 
-See [RELEASE_STATUS.md](RELEASE_STATUS.md) for unresolved boundaries. For code citation use [CITATION.cff](CITATION.cff). **v0.2.2 is a local unpublished repair candidate.** The public historical v0.2.1 DOI (10.5281/zenodo.23286039) must not be cited as though it includes these repairs.
+See [RELEASE_STATUS.md](RELEASE_STATUS.md) for unresolved boundaries. For code citation use [CITATION.cff](CITATION.cff). **v0.2.3 is a local unpublished release candidate.** The public v0.2.2 DOI (10.5281/zenodo.23287169) must not be cited as though it includes the v0.2.3 typed-identity repairs. No v0.2.3 DOI is asserted in this candidate.
 
 ## License
 
-Source code and original documentation are licensed under the [MIT License](LICENSE), copyright 2026 Hakan Pekey. This does not change upstream EPA source terms or license third-party content.
+Source code and original documentation are licensed under the [MIT License](LICENSE), copyright 2026 Hakan Pekey. This does not change upstream EPA source terms or license third-party content. The release-data boundary is stated in [DATA_PROVENANCE_NOTICE.md](DATA_PROVENANCE_NOTICE.md).
 
 ## v0.2.2 critical repair gate
 Strict raw input validation rejects interior bulk clock gaps, nonintegral ECMPS/CAMPD hours, and source Operating Time outside [0,1] or nonfinite. Explicit zero-hours still terminate events under the frozen startup definition. Tests and deliberately simple flat-table comparisons are documented in `GATE_v022.md`. No guarantee of all possible missing source coverage at dataset boundaries is made.
+
+## v0.2.3 typed-identity gate
+
+Source matching uses typed `(facility, source-kind, source-id, clock)` keys. A unit source and a stack/pipe source with the same text label are not treated as the same identity. Ambiguous dual identities, unmapped stack lineage, and mappings that point to unit-kind sources are rejected. Explicit shared-stack linkage records inherited stack provenance; it does not establish independent unit-level measurement. See [GATE_v023.md](GATE_v023.md).

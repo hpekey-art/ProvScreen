@@ -1,0 +1,49 @@
+$ /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/bin/python -m unittest discover -s /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/installed_wheel_test_tree/tests -v
+
+[stderr]
+test_ecmps_nan_op_rejected (test_critical_contracts.CriticalRawContracts.test_ecmps_nan_op_rejected) ... ok
+test_ecmps_op_out_of_range_rejected (test_critical_contracts.CriticalRawContracts.test_ecmps_op_out_of_range_rejected) ... ok
+test_fractional_bulk_hour_rejected (test_critical_contracts.CriticalRawContracts.test_fractional_bulk_hour_rejected) ... ok
+test_fractional_ecmps_hour_rejected (test_critical_contracts.CriticalRawContracts.test_fractional_ecmps_hour_rejected) ... ok
+test_legitimate_explicit_zero_ends_event (test_critical_contracts.CriticalRawContracts.test_legitimate_explicit_zero_ends_event) ... ok
+test_legitimate_stack_op_differs_from_unit (test_critical_contracts.CriticalRawContracts.test_legitimate_stack_op_differs_from_unit) ... ok
+test_misidentified_stack_rejected (test_critical_contracts.CriticalRawContracts.test_misidentified_stack_rejected) ... ok
+test_missing_middle_bulk_hour_rejected (test_critical_contracts.CriticalRawContracts.test_missing_middle_bulk_hour_rejected) ... ok
+test_shared_stack_invalid_operating_time_rejected (test_critical_contracts.CriticalRawContracts.test_shared_stack_invalid_operating_time_rejected) ... ok
+test_valid_three_hours_still_nine_pounds (test_critical_contracts.CriticalRawContracts.test_valid_three_hours_still_nine_pounds) ... ok
+test_2023_frozen_reference (test_engine.Regression.test_2023_frozen_reference) ... ok
+test_duplicate_hour_rejected (test_engine.Regression.test_duplicate_hour_rejected) ... ok
+test_invalid_offset_rejected (test_engine.Regression.test_invalid_offset_rejected) ... ok
+test_ma2024_epa (test_engine.Regression.test_ma2024_epa) ... ok
+test_ma2024_frozen (test_engine.Regression.test_ma2024_frozen) ... ok
+test_mass_negative_rejected (test_engine.Regression.test_mass_negative_rejected) ... ok
+test_ri2024_epa (test_engine.Regression.test_ri2024_epa) ... ok
+test_ri2024_frozen (test_engine.Regression.test_ri2024_frozen) ... ok
+test_duplicate_source_fails (test_raw.RawAdapterTests.test_duplicate_source_fails) ... ok
+test_missing_noxr_fails_closed (test_raw.RawAdapterTests.test_missing_noxr_fails_closed) ... ok
+test_raw_end_to_end (test_raw.RawAdapterTests.test_raw_end_to_end) ... ok
+test_coverage_scope_is_observed_not_annual (test_release_contract_v022.PublicationContracts.test_coverage_scope_is_observed_not_annual) ... ok
+test_engine_refuses_nonempty_existing_output (test_release_contract_v022.PublicationContracts.test_engine_refuses_nonempty_existing_output) ... ok
+test_engine_rejects_partial_adapter_ledger (test_release_contract_v022.PublicationContracts.test_engine_rejects_partial_adapter_ledger) ... ok
+test_f28_duplicated_unit_identity_rejected (test_release_contract_v022.PublicationContracts.test_f28_duplicated_unit_identity_rejected) ... ok
+test_full_year_requires_explicit_complete_calendar (test_release_contract_v022.PublicationContracts.test_full_year_requires_explicit_complete_calendar) ... ok
+test_hour_decisions_have_source_and_eligibility (test_release_contract_v022.PublicationContracts.test_hour_decisions_have_source_and_eligibility) ... ok
+test_missing_declared_roster_unit_rejected (test_release_contract_v022.PublicationContracts.test_missing_declared_roster_unit_rejected) ... ok
+test_atomic_cli_good_prepared (test_release_guard.PublicationSafety.test_atomic_cli_good_prepared) ... ok
+test_atomic_cli_no_stale_output (test_release_guard.PublicationSafety.test_atomic_cli_no_stale_output) ... ok
+test_legal_calculated_indicator (test_release_guard.PublicationSafety.test_legal_calculated_indicator) ... ok
+test_noncontiguous_event_rejected (test_release_guard.PublicationSafety.test_noncontiguous_event_rejected) ... ok
+test_overwrite_prevented (test_release_guard.PublicationSafety.test_overwrite_prevented) ... ok
+test_unknown_indicator_rejected (test_release_guard.PublicationSafety.test_unknown_indicator_rejected) ... ok
+test_both_identity_fields_rejected (test_typed_lineage_v023.TypedLineageTests.test_both_identity_fields_rejected) ... ok
+test_coincident_stack_with_explicit_map_is_inherited (test_typed_lineage_v023.TypedLineageTests.test_coincident_stack_with_explicit_map_is_inherited) ... ok
+test_coincident_stack_without_map_rejected (test_typed_lineage_v023.TypedLineageTests.test_coincident_stack_without_map_rejected) ... ok
+test_direct_unit_is_direct (test_typed_lineage_v023.TypedLineageTests.test_direct_unit_is_direct) ... ok
+test_distinct_unit_and_stack_labels_coexist (test_typed_lineage_v023.TypedLineageTests.test_distinct_unit_and_stack_labels_coexist) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 1.926s
+
+OK
+
+[exit_code] 0

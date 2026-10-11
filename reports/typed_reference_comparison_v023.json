@@ -1,0 +1,49 @@
+{
+  "scope": "six synthetic typed identity scenarios; independent reference linker, not external software",
+  "agreement": 6,
+  "total": 6,
+  "cases": [
+    {
+      "kind": "unit",
+      "mapped": false,
+      "independent": "direct",
+      "provscreen": "direct",
+      "agreement": true
+    },
+    {
+      "kind": "unit",
+      "mapped": true,
+      "independent": "reject",
+      "provscreen": "reject",
+      "agreement": true
+    },
+    {
+      "kind": "stack",
+      "mapped": false,
+      "independent": "reject",
+      "provscreen": "reject",
+      "agreement": true
+    },
+    {
+      "kind": "stack",
+      "mapped": true,
+      "independent": "shared_stack_inherited",
+      "provscreen": "shared_stack_inherited",
+      "agreement": true
+    },
+    {
+      "kind": "dual",
+      "mapped": false,
+      "independent": "reject",
+      "provscreen": "reject",
+      "agreement": true
+    },
+    {
+      "kind": "dual",
+      "mapped": true,
+      "independent": "reject",
+      "provscreen": "reject",
+      "agreement": true
+    }
+  ]
+}

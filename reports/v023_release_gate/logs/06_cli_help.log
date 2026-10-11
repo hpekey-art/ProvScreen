@@ -1,0 +1,26 @@
+$ /workspace/scratch/4741ca8e08d0/v023_gate/audit_run_20261011/isolated_venv/bin/provscreen --help
+usage: provscreen [-h] [--source SOURCE] [--raw-bulk RAW_BULK] [--ecmps ECMPS]
+                  [--year YEAR] [--stack-map STACK_MAP]
+                  [--expected-roster EXPECTED_ROSTER] [--require-full-year]
+                  --outdir OUTDIR
+                  [--classifier {epa_informed_2024,frozen_2023}]
+
+ProvScreen: local CAMPD CSV + ECMPS emissions JSON/ZIP or validated event-hour
+CSV
+
+options:
+  -h, --help            show this help message and exit
+  --source SOURCE       Validated event-hour CSV
+  --raw-bulk RAW_BULK   Local CAMPD hourly CSV (not an EPA downloader)
+  --ecmps ECMPS         Local ECMPS Emissions Export JSON/ZIP/folder
+  --year YEAR
+  --stack-map STACK_MAP
+                        Explicit JSON ORIS|unit to shared-stack location
+  --expected-roster EXPECTED_ROSTER
+                        JSON list of [ORIS,unit] pairs required in CAMPD input
+  --require-full-year   Fail unless every scoped unit has every clock hour of
+                        selected year
+  --outdir OUTDIR
+  --classifier {epa_informed_2024,frozen_2023}
+
+[exit_code] 0

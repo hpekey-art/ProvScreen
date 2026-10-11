@@ -85,18 +85,24 @@ def build(bulk_path, emissions_path, outdir, *, year, selected_units=None, stack
         file_log.append({'name':filename,'oris':oris,'quarter':quarter,'records':len(d['hourlyOperatingData']),
                          'source_bytes_sha256':source_byte_sha})
         for h in d['hourlyOperatingData']:
-            location=str(h.get('unitId') or h.get('stackPipeId') or '')
-            if not location:raise ValueError('Missing ECMPS location')
+            unit_id = h.get('unitId')
+            stack_id = h.get('stackPipeId')
+            has_unit = unit_id is not None and str(unit_id).strip() != ''
+            has_stack = stack_id is not None and str(stack_id).strip() != ''
+            if has_unit == has_stack:
+                raise ValueError('ECMPS source must contain exactly one unitId or stackPipeId')
+            source_kind = 'unit' if has_unit else 'stack'
+            location = str(unit_id if has_unit else stack_id).strip()
             date=pd.Timestamp(h['date'])
             if date.year!=year or ((date.month-1)//3+1)!=quarter:
                 raise ValueError('ECMPS quarter/date mismatch in '+filename)
             hour = _valid_hour(h.get('hour'), 'ECMPS')
             source_op = _valid_operating_time(h.get('operatingTime'), 'ECMPS source')
             ts=str(h['date'])+'T'+str(hour).zfill(2)
-            key=(oris,location,ts)
+            key=(oris,source_kind,location,ts)
             if key in sources:raise ValueError('Duplicate ECMPS location-hour '+str(key))
             nx=[v for v in h.get('derivedHourlyValueData',[]) if v.get('parameterCode')=='NOXR']
-            sources[key]={'noxr_count':len(nx),'modc':str(nx[0].get('modcCode') or '') if len(nx)==1 else '', 'operating_time':source_op,'source_file':filename,'source_location':location,'source_kind':'stack' if h.get('stackPipeId') else 'unit'}
+            sources[key]={'noxr_count':len(nx),'modc':str(nx[0].get('modcCode') or '') if len(nx)==1 else '', 'operating_time':source_op,'source_file':filename,'source_location':location,'source_kind':source_kind}
     if not found_input:raise ValueError('No recognized ECMPS emissions exports')
     mapping=stack_map or {}
     if not isinstance(mapping,dict) or any('|' not in str(k) or not str(v) for k,v in mapping.items()):
@@ -125,19 +131,25 @@ def build(bulk_path, emissions_path, outdir, *, year, selected_units=None, stack
                     # bounded observation window, disclosed rather than extrapolated.
                     break
                 if not op.iloc[j]>0:break
-                row=g.iloc[j]; location=mapping.get(f'{fac}|{unit}',str(unit))
-                ts=row['timestamp'].strftime('%Y-%m-%dT%H');source=sources.get((str(fac),str(location),ts))
+                row=g.iloc[j]
+                is_inherited = f'{fac}|{unit}' in mapping
+                location = str(mapping[f'{fac}|{unit}']) if is_inherited else str(unit)
+                requested_kind = 'stack' if is_inherited else 'unit'
+                ts=row['timestamp'].strftime('%Y-%m-%dT%H')
+                source=sources.get((str(fac),requested_kind,str(location),ts))
+                if is_inherited and source is None and (str(fac),'unit',str(location),ts) in sources:
+                    raise ValueError('Mapped provenance location must be a stackPipeId')
                 if f'{fac}|{unit}' in mapping: used_map.add(f'{fac}|{unit}')
-                if source and str(location)!=str(unit) and source['source_kind']!='stack':
+                if source and is_inherited and source['source_kind']!='stack':
                     raise ValueError('Mapped provenance location must be a stackPipeId')
                 if source is None or source['noxr_count']!=1 or not source['modc']:
                     missing.append({'facility':str(fac),'unit':str(unit),'timestamp':ts,'reason':'missing_or_ambiguous_NOXR'})
                     continue
-                if location==str(unit) and abs(float(source['operating_time'])-float(row['Operating Time']))>1e-9:
+                if not is_inherited and abs(float(source['operating_time'])-float(row['Operating Time']))>1e-9:
                     raise ValueError('Operating time discrepancy '+str((fac,unit,ts)))
                 mass=row['NOx Mass (lbs)'];indicator=row['NOx Mass Measure Indicator']
                 if pd.isna(mass) or pd.isna(indicator):missing.append({'facility':str(fac),'unit':str(unit),'timestamp':ts,'reason':'missing_bulk_mass_or_indicator'});continue
-                events.append({'event_id':f'{fac}|{unit}|{onset.isoformat()}','facility':str(fac),'unit':str(unit),'onset':onset.isoformat(),'offset':offset,'timestamp':row['timestamp'].isoformat(),'modc':source['modc'],'noxr_count':1,'mass_A':float(mass),'bulk_indicator':str(indicator),'source_location':str(location),'provenance_type':'direct' if str(location)==str(unit) else 'shared_stack_inherited','source_file':source['source_file']})
+                events.append({'event_id':f'{fac}|{unit}|{onset.isoformat()}','facility':str(fac),'unit':str(unit),'onset':onset.isoformat(),'offset':offset,'timestamp':row['timestamp'].isoformat(),'modc':source['modc'],'noxr_count':1,'mass_A':float(mass),'bulk_indicator':str(indicator),'source_location':str(location),'provenance_type':'shared_stack_inherited' if is_inherited else 'direct','source_file':source['source_file']})
     if set(mapping)-used_map: raise ValueError('Unused explicit stack-map keys: '+str(sorted(set(mapping)-used_map)))
     if strict and missing:raise ValueError(f'{len(missing)} event-hours lack unambiguous source')
     df=pd.DataFrame(events)

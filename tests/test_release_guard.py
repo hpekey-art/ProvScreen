@@ -14,7 +14,7 @@ class PublicationSafety(unittest.TestCase):
     def test_noncontiguous_event_rejected(self):
         d=pd.read_csv(self.source).iloc[:3].copy();d=d.iloc[[0,2]].copy()
         d.loc[:,'event_id']='test';d.loc[:,'onset']=d.iloc[0].onset
-        d.loc[:,'offset']=[0,2];d.loc[:,'timestamp']=pd.to_datetime(d['onset'])+pd.to_timedelta(d['offset'],unit='h')
+        d.loc[:,'offset']=[0,2];d['timestamp']=(pd.to_datetime(d['onset'])+pd.to_timedelta(d['offset'],unit='h')).dt.strftime('%Y-%m-%dT%H:%M:%S').to_numpy()
         f=self.root/'gap.csv';d.to_csv(f,index=False)
         with self.assertRaisesRegex(ValueError,'Noncontiguous'):run(f,self.root/'output','frozen_2023')
     def test_unknown_indicator_rejected(self):
